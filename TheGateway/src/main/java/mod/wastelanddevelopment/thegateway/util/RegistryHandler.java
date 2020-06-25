@@ -1,6 +1,7 @@
 package mod.wastelanddevelopment.thegateway.util;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
+import mod.wastelanddevelopment.thegateway.blocks.BlockItemBase;
 import mod.wastelanddevelopment.thegateway.blocks.SpariteOre;
 import mod.wastelanddevelopment.thegateway.items.ItemBase;
 import net.minecraft.block.Block;
