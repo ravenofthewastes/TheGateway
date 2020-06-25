@@ -1,0 +1,46 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+
+issueTrackerURL="http://my.issue.tracker/" #optional
+
+[[mods]] #mandatory
+
+modId="thegateway_wd" #mandatory
+
+version="1.15.2-0.0.1" #mandatory
+
+displayName="The Gateway" #mandatory
+
+updateJSONURL="http://myurl.me/" #optional
+
+displayURL="http://example.com/" #optional
+
+logoFile="examplemod.png" #optional
+
+credits="A special thanks to Krevikus and the original Kathairis development team. If it wasn't for finding Kathairis I would never have made the move into modding. A VERY special thanks to my brother in life, ShadowWalkerEraZ, for supporting me as I learned to do all of this, and to my loving wife theVioletSparrow for tolerating all those late nights of me staying up late fiddling with my keyboard, and supporting me in everything I do. EraZ, Violet, and Krevikus, I owe this project to you." #optional
+
+authors="RavenOfTheWastes" #optional
+
+description='''
+The Gateway is a re-imagining/rebirth of Kathairis/Kathairis[Alive]. Seeing as the original team lost interest or fell apart I have taken it upon myself to revive the project and start from the ground up.
+'''
+
+[[dependencies.examplemod]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[31,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
