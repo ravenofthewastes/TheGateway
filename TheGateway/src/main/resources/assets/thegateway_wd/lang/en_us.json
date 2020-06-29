@@ -1,6 +1,11 @@
 {
 "itemGroup.The_Gateway": "The Gateway",
+"item.thegateway_wd.dev_stone": "If You Have Me You Cheated",
+"item.thegateway_wd.sparite_ore": "Sparite Ore",
+"item.thegateway_wd.kath_stone": "Kathairian Stone",
 "item.thegateway_wd.raw_sparite": "Unrefined Sparite",
+"item.thegate_wd.sparite": "Sparite Chunk",
 "item.thegateway_wd.kevar_gem": "Throbbing Gem",
-"block.thegateway_wd.sparite_ore": "Sparite Ore"
+"block.thegateway_wd.sparite_ore": "Sparite Ore",
+"block.thegateway_wd.kath_stone": "Kathairian Stone"
 }
