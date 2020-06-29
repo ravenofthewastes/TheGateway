@@ -1,5 +1,7 @@
 package mod.wastelanddevelopment.thegateway;
 
+import mod.wastelanddevelopment.thegateway.init.ModBlocks;
+import mod.wastelanddevelopment.thegateway.init.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,7 +39,7 @@ public class TheGateway
     	
     	@Override
     	public ItemStack createIcon() {
-    		return new ItemStack(RegistryHandler.DEVSTONE.get());
+    		return new ItemStack(ModItems.DEVSTONE.get());
     	}
     	
     };
