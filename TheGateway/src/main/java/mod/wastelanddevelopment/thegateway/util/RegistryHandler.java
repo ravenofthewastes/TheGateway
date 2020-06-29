@@ -24,6 +24,7 @@ public class RegistryHandler {
 	
 	
 	//ITEMS
+	public static final RegistryObject<Item> DEVSTONE = ITEMS.register("dev_stone", ItemBase::new);
 	public static final RegistryObject<Item> RAWSPARITE = ITEMS.register("raw_sparite", ItemBase::new);
 	public static final RegistryObject<Item> KEVARGEM = ITEMS.register("kevar_gem", ItemBase::new);
 	public static final RegistryObject<Item> SPARITE = ITEMS.register("sparite", ItemBase::new);
