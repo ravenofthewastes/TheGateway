@@ -1,4 +1,4 @@
-package mod.wastelanddevelopment.thegateway.init;
+package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
 import mod.wastelanddevelopment.thegateway.blocks.BlockItemBase;
@@ -10,7 +10,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class ModItems {
+public class RegistryItems {
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, TheGateway.MOD_ID);
 
     //ITEMS
@@ -20,8 +20,8 @@ public class ModItems {
     public static final RegistryObject<Item> SPARITE = ITEMS.register("sparite", ItemBase::new);
 
     //BLOCK ITEMS
-    public static final RegistryObject<Item> SPARITE_ORE_BLOCK_ITEM = ITEMS.register("sparite_ore", () -> new BlockItemBase(ModBlocks.SPARITE_ORE_BLOCK.get()));
-    public static final RegistryObject<Item> KATH_STONE_BLOCK_ITEM = ITEMS.register("kath_stone", () -> new BlockItemBase(ModBlocks.KATH_STONE_BLOCK.get()));
+    public static final RegistryObject<Item> SPARITE_ORE_BLOCK_ITEM = ITEMS.register("sparite_ore", () -> new BlockItemBase(RegistryBlocks.SPARITE_ORE_BLOCK.get()));
+    public static final RegistryObject<Item> KATH_STONE_BLOCK_ITEM = ITEMS.register("kath_stone", () -> new BlockItemBase(RegistryBlocks.KATH_STONE_BLOCK.get()));
 
     public static void registerItems(){
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());

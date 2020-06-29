@@ -1,7 +1,5 @@
 package mod.wastelanddevelopment.thegateway;
 
-import mod.wastelanddevelopment.thegateway.init.ModBlocks;
-import mod.wastelanddevelopment.thegateway.init.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,6 +10,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import mod.wastelanddevelopment.thegateway.registries.RegistryItems;
 import mod.wastelanddevelopment.thegateway.util.RegistryHandler;
 
 @Mod("thegateway_wd")
@@ -39,7 +38,7 @@ public class TheGateway
     	
     	@Override
     	public ItemStack createIcon() {
-    		return new ItemStack(ModItems.DEVSTONE.get());
+    		return new ItemStack(RegistryItems.DEVSTONE.get());
     	}
     	
     };
