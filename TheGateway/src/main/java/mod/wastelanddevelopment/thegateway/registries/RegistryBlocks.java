@@ -12,10 +12,21 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class RegistryBlocks {
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, TheGateway.MOD_ID);
 
-    //BLOCKS
+    //Basic Blocks
     public static final RegistryObject<Block> SPARITE_ORE_BLOCK = BLOCKS.register("sparite_ore", SpariteOre::new);
     public static final RegistryObject<Block> KATH_STONE_BLOCK = BLOCKS.register("kath_stone", KathStone::new);
 
+    
+    //Ores
+    
+    
+    //Deco
+    
+    
+    //Interactable
+    
+    
+    
     public static void registerBlocks(){
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
