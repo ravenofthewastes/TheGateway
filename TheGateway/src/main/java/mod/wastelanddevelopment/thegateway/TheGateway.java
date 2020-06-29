@@ -37,7 +37,7 @@ public class TheGateway
     	
     	@Override
     	public ItemStack createIcon() {
-    		return new ItemStack(RegistryHandler.KEVARGEM.get());
+    		return new ItemStack(RegistryHandler.DEVSTONE.get());
     	}
     	
     };
