@@ -1,6 +1,8 @@
 package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
+import mod.wastelanddevelopment.thegateway.blocks.KathDirt;
+import mod.wastelanddevelopment.thegateway.blocks.KathGrass;
 import mod.wastelanddevelopment.thegateway.blocks.KathStone;
 import mod.wastelanddevelopment.thegateway.blocks.SpariteOre;
 import net.minecraft.block.Block;
@@ -14,6 +16,8 @@ public class RegistryBlocks {
 
     //Basic Blocks
     public static final RegistryObject<Block> KATH_STONE_BLOCK = BLOCKS.register("kath_stone", KathStone::new);
+    public static final RegistryObject<Block> KATH_GRASS = BLOCKS.register("kath_grass", KathGrass::new);
+    public static final RegistryObject<Block> KATH_DIRT = BLOCKS.register("kath_dirt", KathDirt::new);
 
     
     //Ores

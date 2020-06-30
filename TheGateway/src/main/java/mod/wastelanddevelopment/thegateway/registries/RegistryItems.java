@@ -32,6 +32,8 @@ public class RegistryItems {
     //Block Items
     public static final RegistryObject<Item> SPARITE_ORE_BLOCK_ITEM = ITEMS.register("sparite_ore", () -> new BlockItemMain(RegistryBlocks.SPARITE_ORE_BLOCK.get()));
     public static final RegistryObject<Item> KATH_STONE_BLOCK_ITEM = ITEMS.register("kath_stone", () -> new BlockItemMain(RegistryBlocks.KATH_STONE_BLOCK.get()));
+    public static final RegistryObject<Item> KATH_GRASS_BLOCK_ITEM = ITEMS.register("kath_grass", () -> new BlockItemMain(RegistryBlocks.KATH_GRASS.get()));
+    public static final RegistryObject<Item> KATH_DIRT_BLOCK_ITEM = ITEMS.register("kath_dirt", () -> new BlockItemMain(RegistryBlocks.KATH_DIRT.get()));
 
     
     //Misc

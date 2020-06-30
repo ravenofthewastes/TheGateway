@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "thegateway_wd:block/kath_dirt" },
+            { "model": "thegateway_wd:block/kath_dirt", "y": 90 },
+            { "model": "thegateway_wd:block/kath_dirt", "y": 180 },
+            { "model": "thegateway_wd:block/kath_dirt", "y": 270 }
+        ]
+    }
+}
