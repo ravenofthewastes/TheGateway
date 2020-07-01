@@ -1,8 +1,8 @@
 package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
-import mod.wastelanddevelopment.thegateway.biomes.biome_providers.BiomeProviderSettingsTheGateway;
-import mod.wastelanddevelopment.thegateway.biomes.biome_providers.BiomeProviderTheGateway;
+import mod.wastelanddevelopment.thegateway.world.dimension.settings.BiomeProviderSettingsTheGateway;
+import mod.wastelanddevelopment.thegateway.world.dimension.biome_providers.BiomeProviderTheGateway;
 import net.minecraft.world.biome.provider.BiomeProviderType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

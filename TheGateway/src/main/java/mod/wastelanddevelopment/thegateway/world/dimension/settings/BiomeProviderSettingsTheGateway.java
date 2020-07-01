@@ -1,6 +1,5 @@
-package mod.wastelanddevelopment.thegateway.biomes.biome_providers;
+package mod.wastelanddevelopment.thegateway.world.dimension.settings;
 
-import mod.wastelanddevelopment.thegateway.world.dimension.settings.GenSettingsTheGateway;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.provider.IBiomeProviderSettings;
 import net.minecraft.world.storage.WorldInfo;

@@ -1,7 +1,8 @@
-package mod.wastelanddevelopment.thegateway.biomes.biome_providers;
+package mod.wastelanddevelopment.thegateway.world.dimension.biome_providers;
 
 import com.google.common.collect.ImmutableSet;
 import mod.wastelanddevelopment.thegateway.world.dimension.layer.LayerUtilTheGateway;
+import mod.wastelanddevelopment.thegateway.world.dimension.settings.BiomeProviderSettingsTheGateway;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.BiomeProvider;

@@ -1,8 +1,7 @@
 package mod.wastelanddevelopment.thegateway.world.dimension;
 
-import mod.wastelanddevelopment.thegateway.biomes.biome_providers.BiomeProviderSettingsTheGateway;
-import mod.wastelanddevelopment.thegateway.biomes.biome_providers.BiomeProviderTheGateway;
-import mod.wastelanddevelopment.thegateway.registries.RegistryBiomes;
+import mod.wastelanddevelopment.thegateway.world.dimension.settings.BiomeProviderSettingsTheGateway;
+import mod.wastelanddevelopment.thegateway.world.dimension.biome_providers.BiomeProviderTheGateway;
 import mod.wastelanddevelopment.thegateway.registries.RegistryChunkGenerators;
 import mod.wastelanddevelopment.thegateway.registries.RegistryProviderTypes;
 import mod.wastelanddevelopment.thegateway.world.dimension.chunk_generators.ChunkGeneratorTheGateway;
