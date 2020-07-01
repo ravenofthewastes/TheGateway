@@ -10,6 +10,11 @@ import net.minecraft.block.material.MaterialColor;
 public class KathDirt extends Block {
 
     public KathDirt() {
-        super(Block.Properties.create(Material.EARTH).hardnessAndResistance(0.5f).sound(SoundType.GROUND));
+        super(Block.Properties.create(Material.EARTH)
+        		.hardnessAndResistance(0.5f)
+        		.sound(SoundType.GROUND)
+        		.harvestLevel(0)       		
+        		
+        		);	
     }
 }
