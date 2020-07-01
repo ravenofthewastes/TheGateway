@@ -15,7 +15,6 @@ public class RegistryBlocks {
     public static final RegistryObject<Block> KATH_STONE_BLOCK = BLOCKS.register("kath_stone", KathStone::new);
     public static final RegistryObject<Block> KATH_GRASS = BLOCKS.register("kath_grass", KathGrass::new);
     public static final RegistryObject<Block> KATH_DIRT = BLOCKS.register("kath_dirt", KathDirt::new);
-    public static final RegistryObject<Block> KATH_PORTAL = BLOCKS.register("kath_portal", KathPortal::new);
 
     
     //Ores
@@ -27,6 +26,9 @@ public class RegistryBlocks {
     
     //Interactable
     
+    
+    //Misc
+    public static final RegistryObject<Block> KATH_PORTAL = BLOCKS.register("kath_portal", KathPortal::new);
     
     
     public static void registerBlocks(){
