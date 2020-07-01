@@ -1,6 +1,7 @@
 package mod.wastelanddevelopment.thegateway.blocks;
 
 import com.google.common.cache.LoadingCache;
+import mod.wastelanddevelopment.thegateway.TheGateway;
 import mod.wastelanddevelopment.thegateway.registries.RegistryBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -40,8 +41,10 @@ public class KathPortal extends NetherPortalBlock {
     }
 
     public boolean trySpawnPortal(IWorld worldIn, BlockPos pos) {
-        KathPortal.Size netherportalblock$size = this.isPortal(worldIn, pos);
-        if (netherportalblock$size != null && !net.minecraftforge.event.ForgeEventFactory.onTrySpawnPortal(worldIn, pos, netherportalblock$size)) {
+        KathPortal.Size netherportalblock$size = this.isKathPortal(worldIn, pos);
+        if (netherportalblock$size != null
+                //&& !net.minecraftforge.event.ForgeEventFactory.onTrySpawnPortal(worldIn, pos, netherportalblock$size)
+        ) {
             netherportalblock$size.placePortalBlocks();
             return true;
         } else {
@@ -50,8 +53,7 @@ public class KathPortal extends NetherPortalBlock {
     }
 
     @Nullable
-    @Override
-    public KathPortal.Size isPortal(IWorld worldIn, BlockPos pos) {
+    public KathPortal.Size isKathPortal(IWorld worldIn, BlockPos pos) {
         KathPortal.Size netherportalblock$size = new KathPortal.Size(worldIn, pos, Direction.Axis.X);
         if (netherportalblock$size.isValid() && netherportalblock$size.portalBlockCount == 0) {
             return netherportalblock$size;
@@ -152,7 +154,7 @@ public class KathPortal extends NetherPortalBlock {
         }
     }
 
-    public static class Size extends NetherPortalBlock.Size {
+    public static class Size {
         private final IWorld world;
         private final Direction.Axis axis;
         public final Direction rightDir;
@@ -164,7 +166,6 @@ public class KathPortal extends NetherPortalBlock {
         private int width;
 
         public Size(IWorld worldIn, BlockPos pos, Direction.Axis axisIn) {
-            super(worldIn,pos,axisIn);
             this.world = worldIn;
             this.axis = axisIn;
             if (axisIn == Direction.Axis.X) {
@@ -199,13 +200,13 @@ public class KathPortal extends NetherPortalBlock {
             int i;
             for(i = 0; i < 22; ++i) {
                 BlockPos blockpos = pos.offset(directionIn, i);
-                if (!isKathairianPortalFrameBlock(this.world, blockpos.down())) {
+                if (!isKathairianPortalFrameBlock(world.getBlockState(blockpos.down()).getBlock())) {
                     break;
                 }
             }
 
             BlockPos framePos = pos.offset(directionIn, i);
-            return isKathairianPortalFrameBlock(this.world, framePos) ? i : 0;
+            return isKathairianPortalFrameBlock(world.getBlockState(framePos).getBlock()) ? i : 0;
         }
 
         public int getHeight() {
@@ -233,12 +234,12 @@ public class KathPortal extends NetherPortalBlock {
 
                     if (i == 0) {
                         BlockPos framePos = blockpos.offset(this.leftDir);
-                        if (!isKathairianPortalFrameBlock(this.world, framePos)) {
+                        if (!isKathairianPortalFrameBlock(world.getBlockState(framePos).getBlock())) {
                             break label56;
                         }
                     } else if (i == this.width - 1) {
                         BlockPos framePos = blockpos.offset(this.rightDir);
-                        if (!isKathairianPortalFrameBlock(this.world, framePos)) {
+                        if (!isKathairianPortalFrameBlock(world.getBlockState(framePos).getBlock())) {
                             break label56;
                         }
                     }
@@ -247,7 +248,7 @@ public class KathPortal extends NetherPortalBlock {
 
             for(int j = 0; j < this.width; ++j) {
                 BlockPos framePos = this.bottomLeft.offset(this.rightDir, j).up(this.height);
-                if (!isKathairianPortalFrameBlock(this.world, framePos)) {
+                if (!isKathairianPortalFrameBlock(world.getBlockState(framePos).getBlock())) {
                     this.height = 0;
                     break;
                 }
@@ -284,12 +285,11 @@ public class KathPortal extends NetherPortalBlock {
         }
 
 
-        private boolean isKathairianPortalFrameBlock(IWorld world, BlockPos pos){
+        private boolean isKathairianPortalFrameBlock(Block block){
             ArrayList<Block> portalFrameBlocks = new ArrayList<>();
             portalFrameBlocks.add(Blocks.STONE);
             portalFrameBlocks.add(RegistryBlocks.KATH_STONE_BLOCK.get());
-            Block blockToCheck = world.getBlockState(pos).getBlock();
-            return portalFrameBlocks.contains(blockToCheck);
+            return portalFrameBlocks.contains(block);
         }
 
         private boolean func_196899_f() {
