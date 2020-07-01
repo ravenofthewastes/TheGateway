@@ -34,6 +34,7 @@ public class RegistryItems {
     public static final RegistryObject<Item> KATH_STONE_BLOCK_ITEM = ITEMS.register("kath_stone", () -> new BlockItemMain(RegistryBlocks.KATH_STONE_BLOCK.get()));
     public static final RegistryObject<Item> KATH_GRASS_BLOCK_ITEM = ITEMS.register("kath_grass", () -> new BlockItemMain(RegistryBlocks.KATH_GRASS.get()));
     public static final RegistryObject<Item> KATH_DIRT_BLOCK_ITEM = ITEMS.register("kath_dirt", () -> new BlockItemMain(RegistryBlocks.KATH_DIRT.get()));
+    public static final RegistryObject<Item> KATH_PORTAL_BLOCK_ITEM = ITEMS.register("kath_portal", () -> new BlockItemMain(RegistryBlocks.KATH_PORTAL.get()));
 
     
     //Misc
