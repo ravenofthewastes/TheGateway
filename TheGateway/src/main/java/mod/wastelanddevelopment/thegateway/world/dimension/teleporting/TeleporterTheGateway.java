@@ -53,6 +53,7 @@ public class TeleporterTheGateway implements ITeleporter {
         return result;
     }
 
+    //simple reposition code, looking for clear space for player during dimension change, so player won't end up in the wall or sth
     private BlockPos getFreePos(Entity e){
         World world = e.getEntityWorld();
         BlockPos result = e.getPosition();
@@ -87,6 +88,10 @@ public class TeleporterTheGateway implements ITeleporter {
         Direction direction = entity.getTeleportDirection();
         BlockPattern.PortalInfo blockpattern$portalinfo = this.placeInExistingPortal(new BlockPos(entity), entity.getMotion(), direction, vec3d.x, vec3d.y, entity instanceof PlayerEntity);
         if (blockpattern$portalinfo == null) {
+            //hmmm krevik fucked something up here because BlockPattern.PortalInfo often returns null, that's why we need to manually
+            //look for portal blocks near the player's position. + That way single portal block in player's neighbourhood is counted as portal
+            //so it doesn't have to be strictly portal built up from frame blocks
+            //However this workaround doesn't not fix copying entity's or player motion during teleportation (#blameKrevik)
             BlockPos startPos = entity.getPosition();
             int posX=startPos.getX();
             int posY=startPos.getY();
@@ -135,6 +140,7 @@ public class TeleporterTheGateway implements ITeleporter {
         }).orElse((BlockPattern.PortalInfo)null);
     }
 
+    //Default portal frame is gonna be made from stone blocks
     public boolean makePortal(Entity entityIn) {
         int i = 16;
         double d0 = -1.0D;

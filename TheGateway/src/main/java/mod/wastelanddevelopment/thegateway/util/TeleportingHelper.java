@@ -32,15 +32,32 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber(modid = TheGateway.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TeleportingHelper {
 
+
+    //Author Krevik
+    //Why do we need to split between ServerPlayerEntity teleportation method and entitiy's one?
+    //Because they have different teleportation method just check ServerPlayerEntity#changeDimension and Entity#changeDimension
+    //timeUntilPortal field adds teleportation cooldown
+    //we also need to check if entity is not riding on sth or is not ridden by sth. Why? Probably if we try to teleport
+    //such entity, minecraft would potentially crash or teleportation can get bugged
     public static void teleportEntity(Entity entity){
-        if(!entity.world.isRemote && (entity instanceof ServerPlayerEntity)) {
-            ServerPlayerEntity playerEntity = (ServerPlayerEntity) entity;
-            if(playerEntity.timeUntilPortal<=0){
-                playerEntity.timeUntilPortal = 10;
-                playerEntity.changeDimension(getDestination(entity),new TeleporterTheGateway(entity.getServer().getWorld(getDestination(entity))));
-                playerEntity.timeUntilPortal = 10;
+        if(!entity.isBeingRidden() && entity.getRidingEntity()==null){
+            if(!entity.world.isRemote && (entity instanceof ServerPlayerEntity)) {
+                ServerPlayerEntity playerEntity = (ServerPlayerEntity) entity;
+                if(playerEntity.timeUntilPortal<=0){
+                    playerEntity.timeUntilPortal = 10;
+                    playerEntity.changeDimension(getDestination(entity),new TeleporterTheGateway(entity.getServer().getWorld(getDestination(entity))));
+                    playerEntity.timeUntilPortal = 10;
+                }
+            }
+            if(!entity.world.isRemote && !(entity instanceof ServerPlayerEntity)){
+                if(entity.timeUntilPortal<=0){
+                    entity.timeUntilPortal = 10;
+                    entity.changeDimension(getDestination(entity),new TeleporterTheGateway(entity.getServer().getWorld(getDestination(entity))));
+                    entity.timeUntilPortal = 10;
+                }
             }
         }
+
     }
 
     private static DimensionType getDestination(Entity entity) {
@@ -51,77 +68,4 @@ public class TeleportingHelper {
         }
     }
 
-
-    @Nullable
-    public static Entity changeDimensionEntity(Entity entity, DimensionType destination, net.minecraftforge.common.util.ITeleporter teleporter) {
-        if (!net.minecraftforge.common.ForgeHooks.onTravelToDimension(entity, destination)) return null;
-        if (!entity.world.isRemote && !entity.removed) {
-            entity.world.getProfiler().startSection("changeDimension");
-            MinecraftServer minecraftserver = entity.getServer();
-            DimensionType dimensiontype = entity.dimension;
-            ServerWorld serverworld = minecraftserver.getWorld(dimensiontype);
-            ServerWorld serverworld1 = minecraftserver.getWorld(destination);
-            entity.dimension = destination;
-            entity.detach();
-            entity.world.getProfiler().startSection("reposition");
-            Entity transportedEntity = teleporter.placeEntity(entity, serverworld, serverworld1, entity.rotationYaw, spawnPortal -> { //Forge: Start vanilla logic
-                Vec3d vec3d = entity.getMotion();
-                float f = 0.0F;
-                BlockPos blockpos;
-                if (dimensiontype == DimensionType.THE_END && destination == DimensionType.OVERWORLD) {
-                    blockpos = serverworld1.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, serverworld1.getSpawnPoint());
-                } else if (destination == DimensionType.THE_END) {
-                    blockpos = serverworld1.getSpawnCoordinate();
-                } else {
-                    double movementFactor = serverworld.getDimension().getMovementFactor() / serverworld1.getDimension().getMovementFactor();
-                    double d0 = entity.getPosX() * movementFactor;
-                    double d1 = entity.getPosZ() * movementFactor;
-
-                    double d3 = Math.min(-2.9999872E7D, serverworld1.getWorldBorder().minX() + 16.0D);
-                    double d4 = Math.min(-2.9999872E7D, serverworld1.getWorldBorder().minZ() + 16.0D);
-                    double d5 = Math.min(2.9999872E7D, serverworld1.getWorldBorder().maxX() - 16.0D);
-                    double d6 = Math.min(2.9999872E7D, serverworld1.getWorldBorder().maxZ() - 16.0D);
-                    d0 = MathHelper.clamp(d0, d3, d5);
-                    d1 = MathHelper.clamp(d1, d4, d6);
-                    Vec3d vec3d1 = entity.getLastPortalVec();
-                    blockpos = new BlockPos(d0, entity.getPosY(), d1);
-                    if (spawnPortal) {
-                        BlockPattern.PortalInfo blockpattern$portalinfo = new TeleporterTheGateway(serverworld1).placeInExistingPortal(blockpos, vec3d, entity.getTeleportDirection(), vec3d1.x, vec3d1.y, entity instanceof PlayerEntity);
-                        if (blockpattern$portalinfo == null) {
-                            return null;
-                        }
-
-                        blockpos = new BlockPos(blockpattern$portalinfo.pos);
-                        vec3d = blockpattern$portalinfo.motion;
-                        f = (float)blockpattern$portalinfo.rotation;
-                    }
-                }
-
-                entity.world.getProfiler().endStartSection("reloading");
-                Entity entity1 = entity.getType().create(serverworld1);
-                if (entity1 != null) {
-                    entity1.copyDataFromOld(entity);
-                    entity1.moveToBlockPosAndAngles(blockpos, entity1.rotationYaw + f, entity1.rotationPitch);
-                    entity1.setMotion(vec3d);
-                    serverworld1.addFromAnotherDimension(entity1);
-                }
-                return entity1;
-            });//Forge: End vanilla logic
-
-            entity.remove(false);
-            entity.world.getProfiler().endSection();
-            serverworld.resetUpdateEntityTick();
-            serverworld1.resetUpdateEntityTick();
-            entity.world.getProfiler().endSection();
-            return transportedEntity;
-        } else {
-            return null;
-        }
-    }
-
-    private static void triggerDimensionChange(ServerPlayerEntity playerEntity, ServerWorld p_213846_1_) {
-        DimensionType dimensiontype = p_213846_1_.dimension.getType();
-        DimensionType dimensiontype1 = playerEntity.world.dimension.getType();
-        CriteriaTriggers.CHANGED_DIMENSION.trigger(playerEntity, dimensiontype, dimensiontype1);
-    }
 }
