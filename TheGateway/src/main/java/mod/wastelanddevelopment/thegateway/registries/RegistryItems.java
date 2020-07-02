@@ -45,4 +45,5 @@ public class RegistryItems {
     public static void registerItems(){
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
+
 }

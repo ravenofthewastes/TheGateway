@@ -3,6 +3,7 @@ package mod.wastelanddevelopment.thegateway.blocks;
 import com.google.common.cache.LoadingCache;
 import mod.wastelanddevelopment.thegateway.TheGateway;
 import mod.wastelanddevelopment.thegateway.registries.RegistryBlocks;
+import mod.wastelanddevelopment.thegateway.util.TeleportingHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.pattern.BlockPattern;
@@ -78,7 +79,10 @@ public class KathPortal extends NetherPortalBlock {
 
     //TODO ADD TELEPORTATION MECHANICS
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-
+        if(entityIn!=null && !entityIn.isBeingRidden() && entityIn.getRidingEntity() == null){
+            TeleportingHelper.teleportEntity(entityIn);
+            entityIn.timeUntilPortal=10;
+        }
     }
 
     @OnlyIn(Dist.CLIENT)
