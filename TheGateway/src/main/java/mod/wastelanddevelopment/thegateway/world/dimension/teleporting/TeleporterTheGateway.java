@@ -97,7 +97,7 @@ public class TeleporterTheGateway implements ITeleporter {
                         BlockPos checkPos = new BlockPos(posX+x,posY+y,posZ+z);
                         if(entity.getEntityWorld().getBlockState(checkPos).getBlock() == RegistryBlocks.KATH_PORTAL.get()){
                             entity.timeUntilPortal=100;
-                            entity.moveForced(checkPos.getX(),checkPos.getY(),checkPos.getZ());
+                            entity.moveForced(checkPos.getX()+0.5,checkPos.getY()+0.5,checkPos.getZ()+0.5);
                             return true;
                         }
                     }
