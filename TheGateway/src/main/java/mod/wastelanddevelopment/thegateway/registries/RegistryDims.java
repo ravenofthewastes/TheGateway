@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class RegistryDims {
 
-    public static final ResourceLocation DIMENSION_TYPE_BEYOND_END = new ResourceLocation(TheGateway.MOD_ID, "the_gateway");
+    public static final ResourceLocation DIMENSION_TYPE_THE_GATEWAY_LOC = new ResourceLocation(TheGateway.MOD_ID, "the_gateway");
 
     public static final DeferredRegister<ModDimension> MOD_DIMENSIONS = new DeferredRegister<>(ForgeRegistries.MOD_DIMENSIONS, TheGateway.MOD_ID);
 
@@ -30,8 +30,8 @@ public class RegistryDims {
     public static class DimensionRegistry{
         @SubscribeEvent
         public static void registerDimension(final RegisterDimensionsEvent event) {
-            if(DimensionType.byName(DIMENSION_TYPE_BEYOND_END) == null) {
-                DimensionManager.registerDimension(DIMENSION_TYPE_BEYOND_END, RegistryDims.MOD_DIMENSION_THE_GATEWAY.get(), null, true);
+            if(DimensionType.byName(DIMENSION_TYPE_THE_GATEWAY_LOC) == null) {
+                DimensionManager.registerDimension(DIMENSION_TYPE_THE_GATEWAY_LOC, RegistryDims.MOD_DIMENSION_THE_GATEWAY.get(), null, true);
             }
         }
     }
