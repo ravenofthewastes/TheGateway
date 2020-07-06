@@ -1,11 +1,11 @@
 {
-    "variants": {
-        "snowy=false": [
-            { "model": "thegateway_wd:block/kath_grass_block" },
-            { "model": "thegateway_wd:block/kath_grass_block", "y": 90 },
-            { "model": "thegateway_wd:block/kath_grass_block", "y": 180 },
-            { "model": "thegateway_wd:block/kath_grass_block", "y": 270 }
-        ],
-        "snowy=true":  { "model": "thegateway_wd:block/kath_grass_block_snow" }
-    }
+  "variants": {
+    "snowy=false": [
+      { "model": "thegateway_wd:block/kath_grass_block" },
+      { "model": "thegateway_wd:block/kath_grass_block", "y": 90 },
+      { "model": "thegateway_wd:block/kath_grass_block", "y": 180 },
+      { "model": "thegateway_wd:block/kath_grass_block", "y": 270 }
+    ],
+    "snowy=true":  { "model": "thegateway_wd:block/kath_grass_block_snow" }
+  }
 }

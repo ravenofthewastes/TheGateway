@@ -1,6 +1,6 @@
 {
-    "variants": {
-        "axis=z": { "model": "thegateway_wd:block/kath_portal_ew" },
-        "axis=x": { "model": "thegateway_wd:block/kath_portal_ns" }
-    }
+  "variants": {
+    "axis=z": { "model": "thegateway_wd:block/kath_portal_ew" },
+    "axis=x": { "model": "thegateway_wd:block/kath_portal_ns" }
+  }
 }

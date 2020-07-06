@@ -1,5 +1,6 @@
 package mod.wastelanddevelopment.thegateway.world.dimension.teleporting;
 
+import mod.wastelanddevelopment.thegateway.TheGateway;
 import mod.wastelanddevelopment.thegateway.blocks.KathPortal;
 import mod.wastelanddevelopment.thegateway.registries.RegistryBlocks;
 import net.minecraft.block.Block;
@@ -108,7 +109,7 @@ public class TeleporterTheGateway implements ITeleporter {
                     }
                 }
             }
-            System.out.println("didn't find any portal.... need to make some");
+            TheGateway.LOGGER.info("didn't find any portal.... need to make some");
             return false;
         } else {
             Vec3d vec3d1 = blockpattern$portalinfo.pos;
