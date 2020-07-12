@@ -1,6 +1,7 @@
 package mod.wastelanddevelopment.thegateway.world.dimension.biome_providers;
 
 import com.google.common.collect.ImmutableSet;
+import mod.wastelanddevelopment.thegateway.registries.RegistryBiomes;
 import mod.wastelanddevelopment.thegateway.world.dimension.layer.LayerUtilTheGateway;
 import mod.wastelanddevelopment.thegateway.world.dimension.settings.BiomeProviderSettingsTheGateway;
 import net.minecraft.world.biome.Biome;
@@ -12,7 +13,7 @@ import java.util.Set;
 
 public class BiomeProviderTheGateway extends BiomeProvider {
     private final Layer genBiomes;
-    private static final Set<Biome> allowedBiomes = ImmutableSet.of(Biomes.PLAINS,Biomes.JUNGLE);
+    private static final Set<Biome> allowedBiomes = ImmutableSet.of(RegistryBiomes.PLAINS_BIOME.get());
 
     public BiomeProviderTheGateway(BiomeProviderSettingsTheGateway settingsProvider) {
         super(allowedBiomes);

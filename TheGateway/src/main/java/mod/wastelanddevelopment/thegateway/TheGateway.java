@@ -1,5 +1,8 @@
 package mod.wastelanddevelopment.thegateway;
 
+import mod.wastelanddevelopment.thegateway.registries.RegistryBiomes;
+import mod.wastelanddevelopment.thegateway.util.BiomeFeaturesHandler;
+import mod.wastelanddevelopment.thegateway.util.TheGatewayDefaultBiomeFeatures;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +32,8 @@ public class TheGateway
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        //why here? ask forge...Because we cannot add things directly in biome class...
+        BiomeFeaturesHandler.handleFeatures();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

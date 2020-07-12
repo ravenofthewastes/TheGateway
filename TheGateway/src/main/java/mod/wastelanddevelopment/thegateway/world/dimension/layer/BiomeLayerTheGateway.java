@@ -1,6 +1,7 @@
 package mod.wastelanddevelopment.thegateway.world.dimension.layer;
 
 import com.google.common.collect.ImmutableList;
+import mod.wastelanddevelopment.thegateway.registries.RegistryBiomes;
 import mod.wastelanddevelopment.thegateway.world.dimension.settings.GenSettingsTheGateway;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biomes;
@@ -15,8 +16,7 @@ public class BiomeLayerTheGateway implements IC0Transformer {
 
     public static ImmutableList<BiomeManager.BiomeEntry> getBiomesToGeneration(){
         ArrayList<BiomeManager.BiomeEntry> list = new ArrayList<>();
-        list.add(new BiomeManager.BiomeEntry(Biomes.PLAINS,10));
-        list.add(new BiomeManager.BiomeEntry(Biomes.JUNGLE,10));
+        list.add(new BiomeManager.BiomeEntry(RegistryBiomes.PLAINS_BIOME.get(),10));
         return ImmutableList.copyOf(list);
     }
 
