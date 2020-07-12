@@ -41,6 +41,7 @@ public class KathPortal extends NetherPortalBlock {
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
     }
 
+    @Override
     public boolean trySpawnPortal(IWorld worldIn, BlockPos pos) {
         KathPortal.Size netherportalblock$size = this.isKathPortal(worldIn, pos);
         if (netherportalblock$size != null
@@ -77,7 +78,6 @@ public class KathPortal extends NetherPortalBlock {
         return !flag && facingState.getBlock() != this && !(new KathPortal.Size(worldIn, currentPos, direction$axis1)).func_208508_f() ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
     }
 
-    //TODO ADD TELEPORTATION MECHANICS
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
         if(entityIn!=null && !entityIn.isBeingRidden() && entityIn.getRidingEntity() == null){
             TeleportingHelper.teleportEntity(entityIn);
@@ -274,7 +274,12 @@ public class KathPortal extends NetherPortalBlock {
         }
 
         public boolean isValid() {
-            return this.bottomLeft != null && this.width >= 2 && this.width <= 21 && this.height >= 3 && this.height <= 21;
+            boolean b1=this.bottomLeft!=null;
+            boolean b2=this.width>=2;
+            boolean b3=this.width<=21;
+            boolean b4=this.height>=3;
+            boolean b5=this.height<=21;
+            return b1 && b2 && b3 && b4 && b5;
         }
 
         public void placePortalBlocks() {

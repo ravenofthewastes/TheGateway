@@ -2,6 +2,7 @@ package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
 import mod.wastelanddevelopment.thegateway.blocks.BlockItemMain;
+import mod.wastelanddevelopment.thegateway.items.ItemKevarGem;
 import mod.wastelanddevelopment.thegateway.items.ItemMain;
 import mod.wastelanddevelopment.thegateway.items.ItemTabless;
 import net.minecraft.item.Item;
@@ -15,7 +16,7 @@ public class RegistryItems {
     
     
     //Tools
-    public static final RegistryObject<Item> KEVARGEM = ITEMS.register("kevar_gem", ItemMain::new);
+    public static final RegistryObject<Item> KEVARGEM = ITEMS.register("kevar_gem", ItemKevarGem::new);
     
     
     //Foodstuffs
