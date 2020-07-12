@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "thegateway_wd:block/kath_sand"
+  }
+}
