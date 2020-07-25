@@ -3,5 +3,3 @@ Kathairis / TheGateway Rewrite
 ---------------------------------
 README.txt
 ---------------------------------
-
-NULL//NULL
