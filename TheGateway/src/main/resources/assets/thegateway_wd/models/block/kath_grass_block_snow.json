@@ -1,9 +1,9 @@
 {
   "parent": "thegateway_wd:block/cube_bottom_top",
   "textures": {
-    "particle": "thegateway_wd:block/kath_dirt",
-    "bottom": "thegateway_wd:block/kath_dirt",
-    "top": "thegateway_wd:block/kath_grass_block_top",
-    "side": "thegateway_wd:block/kath_grass_block_snow"
+    "particle": "thegateway_wd:blocks/kath_dirt",
+    "bottom": "thegateway_wd:blocks/kath_dirt",
+    "top": "thegateway_wd:blocks/kath_snow",
+    "side": "thegateway_wd:blocks/kath_snow_grass_side"
   }
 }

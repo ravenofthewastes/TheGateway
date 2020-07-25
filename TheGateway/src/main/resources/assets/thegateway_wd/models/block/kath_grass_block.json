@@ -1,11 +1,11 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "thegateway_wd:block/kath_dirt",
-    "bottom": "thegateway_wd:block/kath_dirt",
-    "top": "thegateway_wd:block/kath_grass_block_top",
-    "side": "thegateway_wd:block/kath_grass_block_side",
-    "overlay": "thegateway_wd:block/kath_grass_block_side_overlay"
+    "particle": "thegateway_wd:blocks/kath_dirt",
+    "bottom": "thegateway_wd:blocks/kath_dirt",
+    "top": "thegateway_wd:blocks/kath_grass_block_top",
+    "side": "thegateway_wd:blocks/kath_grass_block_side",
+    "overlay": "thegateway_wd:blocks/kath_grass_block_side_overlay"
   },
   "elements": [
     {
