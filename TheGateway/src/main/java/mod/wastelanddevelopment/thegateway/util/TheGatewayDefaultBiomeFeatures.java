@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.DepthAverageConfig;
 import net.minecraft.world.gen.placement.Placement;
-import org.graalvm.compiler.nodes.NodeView;
+//import org.graalvm.compiler.nodes.NodeView;
 
 public class TheGatewayDefaultBiomeFeatures {
 
