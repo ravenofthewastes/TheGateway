@@ -1,11 +1,7 @@
 package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
-import mod.wastelanddevelopment.thegateway.blocks.SpariteOre;
 import mod.wastelanddevelopment.thegateway.world.dimension.carvers.TheGatewayWorldCaveCarver;
-import net.minecraft.block.Block;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.carver.CaveWorldCarver;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraftforge.fml.RegistryObject;

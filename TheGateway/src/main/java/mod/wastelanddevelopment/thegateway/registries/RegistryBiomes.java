@@ -1,11 +1,8 @@
 package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
-import mod.wastelanddevelopment.thegateway.blocks.SpariteOre;
 import mod.wastelanddevelopment.thegateway.world.dimension.biome.TheGatewayPlainsBiome;
-import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.PlainsBiome;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;

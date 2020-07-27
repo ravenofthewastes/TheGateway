@@ -1,13 +1,9 @@
 package mod.wastelanddevelopment.thegateway.registries;
 
 import mod.wastelanddevelopment.thegateway.TheGateway;
-import mod.wastelanddevelopment.thegateway.blocks.SpariteOre;
 import mod.wastelanddevelopment.thegateway.world.dimension.features.ore.TheGatewayOreFeature;
 import mod.wastelanddevelopment.thegateway.world.dimension.features.ore.TheGatewayOreFeatureConfig;
-import net.minecraft.block.Block;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;

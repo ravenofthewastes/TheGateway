@@ -20,10 +20,10 @@ public class RegistryBlocks {
 
     
     //Ores
-    public static final RegistryObject<Block> SPARITE_ORE_BLOCK = BLOCKS.register("sparite_ore", SpariteOre::new);
-    public static final RegistryObject<Block> KREVISINE_ORE_BLOCK = BLOCKS.register("krevisine_ore", KrevisineOre::new);
-    public static final RegistryObject<Block> ROJA_ORE_BLOCK = BLOCKS.register("roja_ore", RojaOre::new);
-    public static final RegistryObject<Block> JASPER_ORE_BLOCK = BLOCKS.register("jasper_ore", JasperOre::new);
+    public static final RegistryObject<Block> SPARITE_ORE_BLOCK = BLOCKS.register("sparite_ore", OreSparite::new);
+    public static final RegistryObject<Block> KREVISINE_ORE_BLOCK = BLOCKS.register("krevisine_ore", OreKrevisine::new);
+    public static final RegistryObject<Block> ROJA_ORE_BLOCK = BLOCKS.register("roja_ore", OreRoja::new);
+    public static final RegistryObject<Block> JASPER_ORE_BLOCK = BLOCKS.register("jasper_ore", OreJasper::new);
     
     
     //Deco
