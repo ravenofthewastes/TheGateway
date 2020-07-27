@@ -13,7 +13,6 @@ public class RegistryBlocks {
 
     //Basic Blocks
     public static final RegistryObject<Block> KATH_STONE_BLOCK = BLOCKS.register("kath_stone", KathStone::new);
-    public static final RegistryObject<Block> MYSTIC_STONE_BLOCK = BLOCKS.register("mystic_stone", MysticStone::new);
     public static final RegistryObject<Block> KATH_GRASS = BLOCKS.register("kath_grass", KathGrass::new);
     public static final RegistryObject<Block> KATH_DIRT = BLOCKS.register("kath_dirt", KathDirt::new);
     public static final RegistryObject<Block> KATH_SAND = BLOCKS.register("kath_sand", KathSand::new);
