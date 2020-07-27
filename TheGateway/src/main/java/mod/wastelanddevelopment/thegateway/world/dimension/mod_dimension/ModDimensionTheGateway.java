@@ -1,6 +1,6 @@
 package mod.wastelanddevelopment.thegateway.world.dimension.mod_dimension;
 
-import mod.wastelanddevelopment.thegateway.world.dimension.DimensionTheGateway;
+import mod.wastelanddevelopment.thegateway.world.dimension.DimensionKath;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
@@ -12,6 +12,6 @@ public class ModDimensionTheGateway extends ModDimension {
 
     @Override
     public BiFunction<World, DimensionType, ? extends Dimension> getFactory() {
-        return DimensionTheGateway::new;
+        return DimensionKath::new;
     }
 }

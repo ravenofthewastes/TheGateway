@@ -28,8 +28,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
-public class DimensionTheGateway extends Dimension {
-    public DimensionTheGateway(World worldIn, DimensionType typeIn) {
+public class DimensionKath extends Dimension {
+    public DimensionKath(World worldIn, DimensionType typeIn) {
         super(worldIn, typeIn, 0.0F);
     }
 
