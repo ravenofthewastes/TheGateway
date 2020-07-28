@@ -20,7 +20,6 @@ import mod.wastelanddevelopment.thegateway.util.RegistryHandler;
 @Mod("thegateway_wd")
 public class TheGateway
 {
-    //RANDOM COMMIT FOR RAVEN
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "thegateway_wd";
 
