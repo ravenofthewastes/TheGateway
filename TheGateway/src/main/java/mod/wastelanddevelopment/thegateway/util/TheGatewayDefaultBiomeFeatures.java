@@ -36,6 +36,10 @@ public class TheGatewayDefaultBiomeFeatures {
 
     public static void addDefaultOres(Biome biomeIn) {
         biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, RegistryFeatures.ORE.get().withConfiguration(new TheGatewayOreFeatureConfig(TheGatewayOreFeatureConfig.FillerBlockType.THE_GATEWAY_STONE, RegistryBlocks.SPARITE_ORE_BLOCK.get().getDefaultState(), 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 0, 0, 128))));
+        biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, RegistryFeatures.ORE.get().withConfiguration(new TheGatewayOreFeatureConfig(TheGatewayOreFeatureConfig.FillerBlockType.THE_GATEWAY_STONE, RegistryBlocks.KREVISINE_ORE_BLOCK.get().getDefaultState(), 7)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(15, 0, 0, 86))));
+        biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, RegistryFeatures.ORE.get().withConfiguration(new TheGatewayOreFeatureConfig(TheGatewayOreFeatureConfig.FillerBlockType.THE_GATEWAY_STONE, RegistryBlocks.ROJA_ORE_BLOCK.get().getDefaultState(), 5)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 64))));
+        biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, RegistryFeatures.ORE.get().withConfiguration(new TheGatewayOreFeatureConfig(TheGatewayOreFeatureConfig.FillerBlockType.THE_GATEWAY_STONE, RegistryBlocks.JASPER_ORE_BLOCK.get().getDefaultState(), 4)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(5, 0, 0, 32))));
+
     }
 
 }
