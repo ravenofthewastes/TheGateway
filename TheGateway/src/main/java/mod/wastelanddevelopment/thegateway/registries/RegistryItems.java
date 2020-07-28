@@ -5,6 +5,7 @@ import mod.wastelanddevelopment.thegateway.blocks.BlockItemMain;
 import mod.wastelanddevelopment.thegateway.items.ItemKevarGem;
 import mod.wastelanddevelopment.thegateway.items.ItemMain;
 import mod.wastelanddevelopment.thegateway.items.ItemTabless;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -41,11 +42,9 @@ public class RegistryItems {
     public static final RegistryObject<Item> KATH_DIRT_BLOCK_ITEM = ITEMS.register("kath_dirt", () -> new BlockItemMain(RegistryBlocks.KATH_DIRT.get()));
     public static final RegistryObject<Item> KATH_PORTAL_BLOCK_ITEM = ITEMS.register("kath_portal", () -> new BlockItemMain(RegistryBlocks.KATH_PORTAL.get()));
 
-    
     //Misc
     public static final RegistryObject<Item> DEVSTONE = ITEMS.register("dev_stone", ItemTabless::new);
-    
-    
+
 
     public static void registerItems(){
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());

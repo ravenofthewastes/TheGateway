@@ -2,6 +2,7 @@ package mod.wastelanddevelopment.thegateway;
 
 import mod.wastelanddevelopment.thegateway.registries.RegistryBiomes;
 import mod.wastelanddevelopment.thegateway.util.BiomeFeaturesHandler;
+import mod.wastelanddevelopment.thegateway.util.ClientUtils;
 import mod.wastelanddevelopment.thegateway.util.TheGatewayDefaultBiomeFeatures;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -37,6 +38,7 @@ public class TheGateway
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
+        ClientUtils.registerRenderTypes();
     }
     
     public static final ItemGroup TAB = new ItemGroup("The_Gateway") {
