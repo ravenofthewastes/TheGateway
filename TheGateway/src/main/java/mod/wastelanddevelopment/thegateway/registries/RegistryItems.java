@@ -34,13 +34,16 @@ public class RegistryItems {
     public static final RegistryObject<Item> ROJA = ITEMS.register("roja", ItemMain::new);
     public static final RegistryObject<Item> JASPER = ITEMS.register("jasper", ItemMain::new);
     
-    
+
     //Block Items
-    public static final RegistryObject<Item> SPARITE_ORE_BLOCK_ITEM = ITEMS.register("sparite_ore", () -> new BlockItemMain(RegistryBlocks.SPARITE_ORE_BLOCK.get()));
     public static final RegistryObject<Item> KATH_STONE_BLOCK_ITEM = ITEMS.register("kath_stone", () -> new BlockItemMain(RegistryBlocks.KATH_STONE_BLOCK.get()));
-    public static final RegistryObject<Item> KATH_GRASS_BLOCK_ITEM = ITEMS.register("kath_grass", () -> new BlockItemMain(RegistryBlocks.KATH_GRASS.get()));
-    public static final RegistryObject<Item> KATH_DIRT_BLOCK_ITEM = ITEMS.register("kath_dirt", () -> new BlockItemMain(RegistryBlocks.KATH_DIRT.get()));
-    public static final RegistryObject<Item> KATH_PORTAL_BLOCK_ITEM = ITEMS.register("kath_portal", () -> new BlockItemMain(RegistryBlocks.KATH_PORTAL.get()));
+    public static final RegistryObject<Item> ORE_SPARITE_BLOCK_ITEM = ITEMS.register("sparite_ore", () -> new BlockItemMain(RegistryBlocks.SPARITE_ORE_BLOCK.get()));
+    public static final RegistryObject<Item> ORE_JASPER_BLOCK_ITEM = ITEMS.register("jasper_ore", () -> new BlockItemMain(RegistryBlocks.JASPER_ORE_BLOCK.get()));
+    public static final RegistryObject<Item> ORE_KREVISINE_BLOCK_ITEM = ITEMS.register("krevisine_ore", () -> new BlockItemMain(RegistryBlocks.KREVISINE_ORE_BLOCK.get()));
+    public static final RegistryObject<Item> ORE_ROJA_BLOCK_ITEM = ITEMS.register("roja_ore", () -> new BlockItemMain(RegistryBlocks.ROJA_ORE_BLOCK.get()));
+
+
+    //public static final RegistryObject<Item> KATH_PORTAL_BLOCK_ITEM = ITEMS.register("kath_portal", () -> new BlockItemMain(RegistryBlocks.KATH_PORTAL.get()));
 
     //Misc
     public static final RegistryObject<Item> DEVSTONE = ITEMS.register("dev_stone", ItemTabless::new);
