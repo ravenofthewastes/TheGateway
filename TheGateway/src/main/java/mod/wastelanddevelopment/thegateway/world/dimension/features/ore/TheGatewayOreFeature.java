@@ -28,13 +28,13 @@ public class TheGatewayOreFeature extends Feature<TheGatewayOreFeatureConfig> {
         double d2 = (double)((float)pos.getZ() + MathHelper.cos(f) * f1);
         double d3 = (double)((float)pos.getZ() - MathHelper.cos(f) * f1);
         int j = 2;
-        double d4 = (double)(pos.getY() + rand.nextInt(3) - 2);
-        double d5 = (double)(pos.getY() + rand.nextInt(3) - 2);
+        double d4 = (double)(pos.getY() + rand.nextInt(3) -j);
+        double d5 = (double)(pos.getY() + rand.nextInt(3) - j);
         int k = pos.getX() - MathHelper.ceil(f1) - i;
-        int l = pos.getY() - 2 - i;
+        int l = pos.getY() - j - i;
         int i1 = pos.getZ() - MathHelper.ceil(f1) - i;
-        int j1 = 2 * (MathHelper.ceil(f1) + i);
-        int k1 = 2 * (2 + i);
+        int j1 = j * (MathHelper.ceil(f1) + i);
+        int k1 = j * (j + i);
 
         for(int l1 = k; l1 <= k + j1; ++l1) {
             for(int i2 = i1; i2 <= i1 + j1; ++i2) {
