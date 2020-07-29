@@ -57,18 +57,18 @@ public class ChunkGeneratorTheGateway extends NoiseChunkGenerator<GenSettingsThe
     }
 
     protected void fillNoiseColumn(double[] noiseColumn, int noiseX, int noiseZ) {
-        double d0 = (double)684.412F;
-        double d1 = (double)684.412F;
+        double d0 = 684.412D;
+        double d1 = 684.412D;
         double d2 = 8.555149841308594D;
         double d3 = 4.277574920654297D;
         int i = -10;
         int j = 3;
-        this.calcNoiseColumn(noiseColumn, noiseX, noiseZ, (double)684.412F, (double)684.412F, 8.555149841308594D, 4.277574920654297D, 3, -10);
+        this.calcNoiseColumn(noiseColumn, noiseX, noiseZ, d0, d1, d2, d3, j, i);
     }
 
     protected double func_222545_a(double p_222545_1_, double p_222545_3_, int p_222545_5_) {
         double d0 = 8.5D;
-        double d1 = ((double)p_222545_5_ - (8.5D + p_222545_1_ * 8.5D / 8.0D * 4.0D)) * 12.0D * 128.0D / 256.0D / p_222545_3_;
+        double d1 = ((double)p_222545_5_ - (d0 + p_222545_1_ * d0 / 8.0D * 4.0D)) * 12.0D * 128.0D / 256.0D / p_222545_3_;
         if (d1 < 0.0D) {
             d1 *= 4.0D;
         }
@@ -85,8 +85,8 @@ public class ChunkGeneratorTheGateway extends NoiseChunkGenerator<GenSettingsThe
         int j = this.getSeaLevel();
         float f3 = this.biomeProvider.getNoiseBiome(noiseX, j, noiseZ).getDepth();
 
-        for(int k = -2; k <= 2; ++k) {
-            for(int l = -2; l <= 2; ++l) {
+        for(int k = -i; k <= i; ++k) {
+            for(int l = -i; l <= i; ++l) {
                 Biome biome = this.biomeProvider.getNoiseBiome(noiseX + k, j, noiseZ + l);
                 float f4 = biome.getDepth();
                 float f5 = biome.getScale();
