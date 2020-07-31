@@ -17,6 +17,10 @@ SQWatermark
 
 Textures:
 RavenOfTheWastes(Placeholders)
+VioletSparrow(Originals)
+
+Alpha Testers(The guys who tell us how we messed up):
+ShadowWalkerEraZ
 
 
 KATHAIRIS ORIGINAL
