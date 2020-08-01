@@ -41,13 +41,12 @@ public class KathPortal extends NetherPortalBlock {
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
     }
 
+
     @Override
     public boolean trySpawnPortal(IWorld worldIn, BlockPos pos) {
-        KathPortal.Size netherportalblock$size = this.isKathPortal(worldIn, pos);
-        if (netherportalblock$size != null
-                //&& !net.minecraftforge.event.ForgeEventFactory.onTrySpawnPortal(worldIn, pos, netherportalblock$size)
-        ) {
-            netherportalblock$size.placePortalBlocks();
+        Size blockportal$size = this.isKathPortal(worldIn, pos);
+        if (blockportal$size != null) {
+            blockportal$size.placePortalBlocks();
             return true;
         } else {
             return false;
@@ -55,15 +54,16 @@ public class KathPortal extends NetherPortalBlock {
     }
 
     @Nullable
-    public KathPortal.Size isKathPortal(IWorld worldIn, BlockPos pos) {
-        KathPortal.Size netherportalblock$size = new KathPortal.Size(worldIn, pos, Direction.Axis.X);
-        if (netherportalblock$size.isValid() && netherportalblock$size.portalBlockCount == 0) {
-            return netherportalblock$size;
+    public Size isKathPortal(IWorld p_201816_1_, BlockPos p_201816_2_) {
+        Size blockportal$size = new Size(p_201816_1_, p_201816_2_, Direction.Axis.X);
+        if (blockportal$size.isValid() && blockportal$size.portalBlockCount == 0) {
+            return blockportal$size;
         } else {
-            KathPortal.Size netherportalblock$size1 = new KathPortal.Size(worldIn, pos, Direction.Axis.Z);
-            return netherportalblock$size1.isValid() && netherportalblock$size1.portalBlockCount == 0 ? netherportalblock$size1 : null;
+            Size blockportal$size1 = new Size(p_201816_1_, p_201816_2_, Direction.Axis.Z);
+            return blockportal$size1.isValid() && blockportal$size1.portalBlockCount == 0 ? blockportal$size1 : null;
         }
     }
+
 
     /**
      * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
@@ -200,17 +200,17 @@ public class KathPortal extends NetherPortalBlock {
 
         }
 
-        protected int getDistanceUntilEdge(BlockPos pos, Direction directionIn) {
+        protected int getDistanceUntilEdge(BlockPos p_180120_1_, Direction p_180120_2_) {
             int i;
             for(i = 0; i < 22; ++i) {
-                BlockPos blockpos = pos.offset(directionIn, i);
-                if (!isKathairianPortalFrameBlock(world.getBlockState(blockpos.down()).getBlock())) {
+                BlockPos blockpos = p_180120_1_.offset(p_180120_2_, i);
+                if (!this.func_196900_a(this.world.getBlockState(blockpos)) || this.world.getBlockState(blockpos.down()).getBlock() != Blocks.STONE) {
                     break;
                 }
             }
 
-            BlockPos framePos = pos.offset(directionIn, i);
-            return isKathairianPortalFrameBlock(world.getBlockState(framePos).getBlock()) ? i : 0;
+            Block block = this.world.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
+            return block == Blocks.STONE ? i : 0;
         }
 
         public int getHeight() {
