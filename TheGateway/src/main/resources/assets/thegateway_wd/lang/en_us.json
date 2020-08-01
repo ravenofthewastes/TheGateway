@@ -4,10 +4,17 @@
   "item.thegateway_wd.raw_sparite": "Unrefined Sparite",
   "item.thegateway_wd.sparite": "Sparite Chunk",
   "item.thegateway_wd.kevar_gem": "Throbbing Gem",
-  "block.thegateway_wd.sparite_ore": "Sparite Ore",
   "block.thegateway_wd.kath_stone": "Kathairian Stone",
   "block.thegateway_wd.kath_dirt": "Kathairian Dirt",
   "block.thegateway_wd.kath_grass": "Kathairian Grass",
   "block.thegateway_wd.kath_portal": "Kathairian Portal",
-  "block.thegateway_wd.kath_sand": "Kathairian Sand"
+  "block.thegateway_wd.kath_sand": "Kathairian Sand",
+  "block.thegateway_wd.ore_sparite": "Sparite Ore",
+  "block.thegateway_wd.ore_jasper": "Jasper Ore",
+  "block.thegateway_wd.ore_krevisine": "Krevisine Ore",
+  "block.thegateway_wd.ore_roja": "Roja Dirt Ore",
+  "block.thegateway_wd.sparite_block": "Sparite Block",
+  "block.thegateway_wd.krevisine_block": "Krevisine Block",
+  "block.thegateway_wd.jasper_block": "Jasper Block",
+  "block.thegateway_wd.roja_block": "Roja Block"
 }

@@ -23,8 +23,15 @@ public class ItemKevarGem extends ItemMain{
         World worldIn = context.getWorld();
         if(!worldIn.isRemote()) {
             BlockPos pos = context.getPos();
-            if (worldIn.dimension.getType() != DimensionType.THE_NETHER) {
+            if (worldIn.dimension.getType() != DimensionType.THE_NETHER && worldIn.dimension.getType() != DimensionType.THE_END) {
                 ((KathPortal) RegistryBlocks.KATH_PORTAL.get()).trySpawnPortal(worldIn, pos);
+                ((KathPortal) RegistryBlocks.KATH_PORTAL.get()).trySpawnPortal(worldIn, pos.up());
+                ((KathPortal) RegistryBlocks.KATH_PORTAL.get()).trySpawnPortal(worldIn, pos.up(2));
+                ((KathPortal) RegistryBlocks.KATH_PORTAL.get()).trySpawnPortal(worldIn, pos.up(3));
+
+                ItemStack itemstack = context.getItem();
+                itemstack.shrink(1);
+                return ActionResultType.SUCCESS;
             }
         }
         return super.onItemUse(context);
