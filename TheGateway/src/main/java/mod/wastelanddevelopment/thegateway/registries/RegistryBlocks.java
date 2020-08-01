@@ -13,9 +13,10 @@ public class RegistryBlocks {
 
     //Basic Blocks
     public static final RegistryObject<Block> KATH_STONE_BLOCK = BLOCKS.register("kath_stone", KathStone::new);
-    public static final RegistryObject<Block> KATH_GRASS = BLOCKS.register("kath_grass", KathGrass::new);
-    public static final RegistryObject<Block> KATH_DIRT = BLOCKS.register("kath_dirt", KathDirt::new);
-    public static final RegistryObject<Block> KATH_SAND = BLOCKS.register("kath_sand", KathSand::new);
+    public static final RegistryObject<Block> KATH_RUBBLE_BLOCK = BLOCKS.register("kath_rubble", KathRubble::new);
+    public static final RegistryObject<Block> KATH_GRASS_BLOCK = BLOCKS.register("kath_grass", KathGrass::new);
+    public static final RegistryObject<Block> KATH_DIRT_BLOCK = BLOCKS.register("kath_dirt", KathDirt::new);
+    public static final RegistryObject<Block> KATH_SAND_BLOCK = BLOCKS.register("kath_sand", KathSand::new);
 
     
     //Ores
