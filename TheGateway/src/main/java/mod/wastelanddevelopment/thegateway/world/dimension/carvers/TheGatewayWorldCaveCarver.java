@@ -19,7 +19,7 @@ import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 
 public class TheGatewayWorldCaveCarver extends WorldCarver<ProbabilityConfig> {
-    protected Set<Block> carvableBlocks = ImmutableSet.of(RegistryBlocks.KATH_DIRT.get(),RegistryBlocks.KATH_GRASS.get(),RegistryBlocks.KATH_STONE_BLOCK.get());
+    protected Set<Block> carvableBlocks = ImmutableSet.of(RegistryBlocks.KATH_DIRT_BLOCK.get(),RegistryBlocks.KATH_GRASS_BLOCK.get(),RegistryBlocks.KATH_STONE_BLOCK.get());
 
     public TheGatewayWorldCaveCarver(Function<Dynamic<?>, ? extends ProbabilityConfig> p_i49929_1_, int p_i49929_2_) {
         super(p_i49929_1_, p_i49929_2_);

@@ -33,7 +33,7 @@ public class KathGrass extends GrassBlock {
 
     public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
         BlockPos blockpos = pos.up();
-        BlockState blockstate = RegistryBlocks.KATH_GRASS.get().getDefaultState();
+        BlockState blockstate = RegistryBlocks.KATH_GRASS_BLOCK.get().getDefaultState();
 
         for(int i = 0; i < 128; ++i) {
             BlockPos blockpos1 = blockpos;
@@ -99,14 +99,14 @@ public class KathGrass extends GrassBlock {
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         if (!func_220257_b(state, worldIn, pos)) {
             if (!worldIn.isAreaLoaded(pos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-            worldIn.setBlockState(pos, RegistryBlocks.KATH_DIRT.get().getDefaultState());
+            worldIn.setBlockState(pos, RegistryBlocks.KATH_DIRT_BLOCK.get().getDefaultState());
         } else {
             if (worldIn.getLight(pos.up()) >= 9) {
                 BlockState blockstate = this.getDefaultState();
 
                 for(int i = 0; i < 4; ++i) {
                     BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
-                    if (worldIn.getBlockState(blockpos).getBlock() == RegistryBlocks.KATH_DIRT.get() && func_220256_c(blockstate, worldIn, blockpos)) {
+                    if (worldIn.getBlockState(blockpos).getBlock() == RegistryBlocks.KATH_DIRT_BLOCK.get() && func_220256_c(blockstate, worldIn, blockpos)) {
                         worldIn.setBlockState(blockpos, blockstate.with(SNOWY, Boolean.valueOf(worldIn.getBlockState(blockpos.up()).getBlock() == Blocks.SNOW)));
                     }
                 }
